@@ -2985,6 +2985,49 @@
       }
     }
   </style>
+
+  <style>
+    /* 容器居中并限制最大宽度 */
+    .container {
+      max-width: 1240px;
+      margin: 0px auto;
+      padding: 0px;
+    }
+
+    /* 网格：两列，间距可调 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    /* 每个格子的样式 */
+    .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+      border-radius: 8px;
+      min-height: 250px;
+      /* 给定最小高度，保证纵向能居中 */
+      overflow: hidden;
+      padding: 6px;
+    }
+
+    /* 保持正方形格子并让图片填充（裁剪） */
+    .grid-item img {
+      max-width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+
+    /* 小屏幕时变一列显示 */
+    @media (max-width: 520px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
   <link rel="stylesheet" id="astra-google-fonts-css"
     href="https://fonts.googleapis.com/css?family=Raleway%3A400%2C700%2C600&#038;display=fallback&#038;ver=4.11.10"
     media="all" />
@@ -3726,9 +3769,9 @@
                                           xml:space="preserve">
                                           <path
                                             d="M57.5,38.193l12.5,12.5l12.5-12.5l-2.5-2.5l-10,10l-10-10L57.5,38.193z" />
-                                        </svg></span>MobilityNet</a>
+                                        </svg></span>Overview</a>
                                   </li>
-                                  <li id="menu-item-28"
+                                  <!-- <li id="menu-item-28"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28">
                                     <a href="../publications/index.html" class="menu-link"><span
                                         class="ast-icon icon-arrow"><svg class="ast-arrow-svg"
@@ -3739,8 +3782,8 @@
                                           <path
                                             d="M57.5,38.193l12.5,12.5l12.5-12.5l-2.5-2.5l-10,10l-10-10L57.5,38.193z" />
                                         </svg></span>Publications</a>
-                                  </li>
-                                  <li id="menu-item-30"
+                                  </li> -->
+                                  <!-- <li id="menu-item-30"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30">
                                     <a href="../software/index.html" class="menu-link"><span
                                         class="ast-icon icon-arrow"><svg class="ast-arrow-svg"
@@ -3751,17 +3794,21 @@
                                           <path
                                             d="M57.5,38.193l12.5,12.5l12.5-12.5l-2.5-2.5l-10,10l-10-10L57.5,38.193z" />
                                         </svg></span>Software</a>
-                                  </li>
+                                  </li> -->
                                 </ul>
                               </li>
                               <li id="menu-item-151"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151">
-                                <a href="../news/index.html" class="menu-link">News &amp; Events</a>
+                                <a href="../news/index.html" class="menu-link">News</a>
                               </li>
                               <li id="menu-item-25"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25">
                                 <!-- <a href="../partners/index.html" class="menu-link">Partners</a> -->
                                 <a href="../publications/index.html" class="menu-link">Publications</a>
+                              </li>
+                              <li id="menu-item-29"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29">
+                                <a href="../software/index.html" class="menu-link">Software</a>
                               </li>
                               <li id="menu-item-26"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26">
@@ -3858,7 +3905,7 @@
                     <ul
                       class="main-header-menu ast-nav-menu ast-flex submenu-with-border astra-menu-animation-fade stack-on-mobile">
                       <li class="page_item page-item-5 menu-item">
-                        <a href="../news/index.html" class="menu-link">News &amp; Events</a>
+                        <a href="../news/index.html" class="menu-link">News</a>
                       </li>
                       <li class="page_item page-item-10 current-menu-item menu-item current-menu-item">
                         <a href="index.html" class="menu-link">MobilityNet</a>
@@ -3911,27 +3958,46 @@
             <article class="post-10 page type-page status-publish ast-article-single" id="post-10"
               itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
               <div class="entry-content clear" data-ast-blocks-layout="true" itemprop="text">
-                <h2 class="wp-block-heading">Cyberinfrastructure</h2>
+                <h2 class="wp-block-heading">Introduction</h2>
 
-                <div
-                  class="wp-block-group is-content-justification-left is-nowrap is-layout-flex wp-container-core-group-is-layout-1d30bdf7 wp-block-group-is-layout-flex"
-                  style="padding-top: 0; padding-bottom: 0">
+                <div>
                   <p class="wp-container-content-9e2f13cb">
-                    We propose a plan organized into work packages, 5
-                    corresponding to<br />major CI components (CI), and 2
-                    cross-cutting ones (CC).<br />In what follows, we outline
-                    the directions and tasks we will<br />follow for the
-                    design and implementation of the CI.<br /><strong>(CI1)</strong>
-                    Collection, Generation, and Discovery<br /><strong>(CI2)</strong>
-                    Curation and Transformation<br /><strong>(CI3)</strong>
-                    Data Management<br /><strong>(CI4) </strong>Analytics and
-                    Predictive Modeling<br /><strong>(CI5)</strong>
-                    Interactive Computing and Visualization<br /><strong>(CC1)</strong>
-                    Cloud-Based Collaborative Environment<br /><strong>(CC2)</strong>
-                    Transparency, Reproducibility, and Trust
+                    Most mobility data are proprietary and thus cannot be accessed by the research community unless
+                    released by data owners. Recently, under the context of Data Science for Social Good, some data
+                    owners are willing to share their data to unlock the data value. In addition, the recent advance of
+                    Generative AI provide a new opportunity for data synthesis.
                   </p>
+                  <h2 class="wp-block-heading">New Opportunities </h2>
+
+                  <!-- <div class="container">
+                    <div class="grid">
+                      <div class="grid-item">
+                        <img src="../media/overview/1.png">
+                      </div>
+
+                      <div class="grid-item">
+                        <img src="../media/overview/2.png">
+                      </div>
+
+                      <div class="grid-item">
+                        <img src="../media/overview/3.png">
+                      </div>
+
+                      <div class="grid-item">
+                        <img src="../media/overview/4.png">
+
+                      </div>
+                    </div>
+                  </div> -->
 
                   <figure class="wp-block-image size-full wp-container-content-dc435e0d">
+                    <img decoding="async" width="800" height="600" src="../media/overview/oppo.png"
+                      alt="" class="wp-image-205" style="box-shadow: none" srcset="
+                      ../media/overview/oppo.png,
+                        " sizes="(max-width: 1584px) 100vw, 1584px" />
+                  </figure>
+
+                  <!-- <figure class="wp-block-image size-full wp-container-content-dc435e0d">
                     <img decoding="async" width="1584" height="1225" src="../wp-content/uploads/2024/07/oscurs-2.png"
                       alt="" class="wp-image-205" style="box-shadow: none" srcset="
                           ../wp-content/uploads/2024/07/oscurs-2.png           1584w,
@@ -3940,107 +4006,136 @@
                           ../wp-content/uploads/2024/07/oscurs-2-768x594.png    768w,
                           ../wp-content/uploads/2024/07/oscurs-2-1536x1188.png 1536w
                         " sizes="(max-width: 1584px) 100vw, 1584px" />
-                  </figure>
+                  </figure> -->
                 </div>
+
+                <br></br>
+                <h2 class="wp-block-heading">
+                  New Challenges
+                </h2>
+                <ul>
+                  <li>
+                    Low Usability due to Data Quality.
+                  </li>
+                  <li>
+                    Use Case Uncertainty due to Data Implicitness.
+                  </li>
+                  <li>
+                    High Privacy Risks due to Data Sensitivity.
+                  </li>
+                </ul>
 
                 <h2 class="wp-block-heading">
-                  Community Building, Outreach and Education
+                  Our Research Goal
+                </h2>
+                <ul>
+                  <li>
+                    Fundamental Research Innovation
+                  </li>
+                  <li>
+                    Empower S&E Research with Synthetic Data
+                  </li>
+                </ul>
+
+                <h2 class="wp-block-heading">
+                  Interdisciplinary Approach
+
+                </h2>
+                <figure class="wp-block-image size-full wp-container-content-dc435e0d">
+                  <img decoding="async" width="800" height="600" src="../media/overview/approach.png"
+                    alt="" class="wp-image-205" style="box-shadow: none" srcset="
+                    ../media/overview/approach.png,
+                      " sizes="(max-width: 1584px) 100vw, 1584px" />
+                </figure>
+                <h2 class="wp-block-heading">
+                  Use Cases
+
+                </h2>
+                <figure class="wp-block-image size-full wp-container-content-dc435e0d">
+                  <img decoding="async" width="800" height="600" src="../media/overview/use.png"
+                    alt="" class="wp-image-205" style="box-shadow: none" srcset="
+                    ../media/overview/use.png,
+                      " sizes="(max-width: 1584px) 100vw, 1584px" />
+                </figure>
+                <h2 class="wp-block-heading">
+                  Progress Summary
                 </h2>
 
-                <div
-                  class="wp-block-group is-horizontal is-content-justification-center is-nowrap is-layout-flex wp-container-core-group-is-layout-4defb8d2 wp-block-group-is-layout-flex"
-                  style="padding-top: 0; padding-bottom: 0">
-                  <div
-                    class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-4b827052 wp-block-group-is-layout-flex">
-                    <h3 class="wp-block-heading">
-                      Fostering Close Collaborations Among Stakeholders
-                    </h3>
+                <ul>
+                  <li>
+                    Designed a novel autoregressive spatio-temporal denoising diffusion model called AutoSTDiff for
+                    mobility data generation
+                  </li>
+                  <li>
+                    Designed a privacy attack suite called POIPrivacy containing data extraction and membership
+                    inference attacks
+                  </li>
+                  <li>Studied three mobility data-based use cases including transportation transfer time prediction,
+                    waiting time understand, and mobility flow prediction
+                  </li>
+                  <li>Publications in ACM KDD, ACM CSCW, SIAM SDM, ACM CIKM, ACM SIGSPATIAL
+                  </li>
+                  <li>Shared a privacy attack suite and codes of eight different synthetic mobility data generation
+                    models through GitHub.
+                  </li>
+                  <li>New graduate-level and undergraduate-level course materials
+                  </li>
+                  <li>Research for over 10 K-12 to Ph.D. students</li>
 
-                    <p class="wp-container-content-9cfa9a5a">
-                      To help ensure a sustainable future beyond the initial
-                      project timeline, we will also align the development of
-                      our software infrastructure with the needs and use cases
-                      of researchers and municipal agencies, using Chicago,
-                      Seattle, and NYC as test case example. In Y1 and Y2,
-                      workshops will be held in NYC. The experience from these
-                      workshops will inform the design of the subsequent
-                      workshops to be held in Seattle focusing on
-                      accessibility, and Chicago focusing on urban planning. A
-                      final workshop to draw together themes and experiences
-                      will be held in NYC. Each workshop will have a principal
-                      local stakeholder partner, but will additionally draw on
-                      the expertise of the collaborators that have
-                      demonstrated a keen interest in our outcomes.
-                    </p>
 
-                    <h3 class="wp-block-heading">
-                      Education and Mentoring Activities
-                    </h3>
+                </ul>
 
-                    <p>
-                      We will implement an internship program to host graduate
-                      students from collaborating groups at our institutions.
-                      The interns will work in close collaboration with
-                      OSCUR’s software engineers and PIs and participate in
-                      the team’s meetings. In doing so, our goals are to (1)
-                      better align our development goals with the<br />actual
-                      requirements from domain experts, (2) stimulate the
-                      usage of OSCUR by the urban science community, and (3)
-                      disseminate knowledge about software development and
-                      urban computing.
-                    </p>
 
-                    <h3 class="wp-block-heading">Curriculum development</h3>
 
-                    <p>
-                      We will leverage the project’s outcomes to develop new
-                      courses and update existing ones taught by the PIs.
-                    </p>
-                  </div>
 
-                  <div
-                    class="wp-block-group wp-container-content-5c585a4f is-layout-constrained wp-block-group-is-layout-constrained">
-                    <div
-                      class="wp-block-group has-ast-global-color-6-background-color has-background wp-container-content-f5653622 is-vertical is-content-justification-left is-layout-flex wp-container-core-group-is-layout-b7fc584f wp-block-group-is-layout-flex"
-                      style="border-width: 1px; border-radius: 5px">
-                      <h5 class="wp-block-heading">Year 1</h5>
 
-                      <p class="has-small-font-size">
-                        <strong>Location: </strong>New York City<br /><strong>Theme:
-                        </strong>Transportation<br /><strong>Partners: </strong>TBD
-                      </p>
 
-                      <h5 class="wp-block-heading">Year 2</h5>
 
-                      <p class="has-small-font-size">
-                        <strong>Location:</strong> New York City<br /><strong>Theme:
-                        </strong>Sensing<br /><strong>Partners:</strong> TBD
-                      </p>
 
-                      <h5 class="wp-block-heading">Year 3</h5>
+                <h2 class="wp-block-heading">
+                  Diffusion Model for Data Generation
+                </h2>
+                <figure class="wp-block-image size-full wp-container-content-dc435e0d">
+                  <img decoding="async" width="800" height="600" src="../media/overview/gene.png"
+                    alt="" class="wp-image-205" style="box-shadow: none" srcset="
+                    ../media/overview/gene.png,
+                      " sizes="(max-width: 1584px) 100vw, 1584px" />
+                </figure>
+                <h2 class="wp-block-heading">
+                  Mobility Privacy Attack Suite
+                </h2>
+                  <figure class="wp-block-image size-full wp-container-content-dc435e0d">
+                    <img decoding="async" width="800" height="600" src="../media/overview/18.png"
+                      alt="" class="wp-image-205" style="box-shadow: none" srcset="
+                      ../media/overview/18.png,
+                        " sizes="(max-width: 1584px) 100vw, 1584px" />
+                  </figure>
+                <p class="wp-container-content-9e2f13cb">
+                  We introduce a novel privacy attack suite that incorporates unique characteristics of mobility data
+                  (e.g., spatial-temporal information) into the attack design.
+                </p>
 
-                      <p class="has-small-font-size">
-                        <strong>Location:</strong> Seattle<br /><strong>Theme:</strong>
-                        Accessibility<br /><strong>Partners:</strong> TBD
-                      </p>
 
-                      <h5 class="wp-block-heading">Year 4</h5>
 
-                      <p class="has-small-font-size">
-                        <strong>Location: </strong>Chicago<br /><strong>Theme:
-                        </strong>Planning<br /><strong>Partners:</strong> TBD
-                      </p>
+                <h2 class="wp-block-heading">
+                  Project Plan
 
-                      <h5 class="wp-block-heading">Year 5</h5>
+                </h2>
+                <ul>
+                  <li>Mobility Data Generation Based on LLMs
 
-                      <p class="has-small-font-size">
-                        <strong>Location:</strong> New York City<br /><strong>Theme:
-                        </strong>Planning<br /><strong>Partners: </strong>TBD
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  </li>
+                  <li>Novel Threat Models and Defense Models
+
+                  </li>
+                  <li>Project Website Design and Dissemination
+                  </li>
+                  <li>Mobility Data-focused Workshop
+
+                  </li>
+                </ul>
               </div>
+
               <!-- .entry-content .clear -->
             </article>
             <!-- #post-## -->
@@ -4071,9 +4166,9 @@
                         class="wp-block-uagb-image uagb-block-e204fe2d wp-block-uagb-image--layout-default wp-block-uagb-image--effect-static wp-block-uagb-image--align-none">
                         <figure class="wp-block-uagb-image__figure">
 
-                            <a href="https://rutgers.edu" target="_blank" rel=" noreferrer noopener"><img loading="lazy"
+                          <a href="https://rutgers.edu" target="_blank" rel=" noreferrer noopener"><img loading="lazy"
                               decoding="async" width="768" height="768" src="../media/rutgers.png" alt=""
-                              class="wp-image-127" style="width: 100px; height: auto" srcset="
+                              class="wp-image-127" style="width: 150px; height: 60px" srcset="
                               ../media/rutgers.png         768w,
                               ../media/rutgers.png 300w,
                               ../media/rutgers.png 150w
@@ -4087,7 +4182,7 @@
                       <figure class="wp-block-image aligncenter size-full is-resized has-lightbox">
                         <a href="https://ucla.edu/" target="_blank" rel=" noreferrer noopener"><img loading="lazy"
                             decoding="async" width="768" height="768" src="../media/ucla.png" alt=""
-                            class="wp-image-127" style="width: 116px; height: auto" srcset="
+                            class="wp-image-127" style="width: 116px; height: 80px" srcset="
                                 ../media/ucla.png         768w,
                                 ../media/ucla.png 300w,
                                 ../media/ucla.png 150w
@@ -4098,12 +4193,11 @@
                     <div
                       class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow">
                       <figure class="wp-block-image aligncenter size-full is-resized has-lightbox">
-                        <a href="https://www.fsu.edu/" target="_blank" rel=" noreferrer noopener"><img
-                            loading="lazy" decoding="async" width="640" height="432"
-                            src="../media/fsu.svg" alt="" class="wp-image-126"
+                        <a href="https://www.fsu.edu/" target="_blank" rel=" noreferrer noopener"><img loading="lazy"
+                            decoding="async" width="640" height="432" src="../media/fsu.png" alt="" class="wp-image-126"
                             style="width: 160px; height: auto" srcset="
-                                ../media/fsu.svg         640w,
-                                ../media/fsu.svg 300w
+                                ../media/fsu.png         640w,
+                                ../media/fsu.png 300w
                               " sizes="auto, (max-width: 640px) 100vw, 640px" /></a>
                       </figure>
                     </div>
